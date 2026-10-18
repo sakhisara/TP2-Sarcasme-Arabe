@@ -1,5 +1,4 @@
 # TP2 — Détection du sarcasme en arabe
-
 Ce projet compare plusieurs méthodes de détection du sarcasme sur les tweets
 arabes du corpus **ArSarcasm-v2**. Le travail va d'une baseline TF-IDF à des modèles
 pré-entraînés utilisés directement, gelés ou fine-tunés. Il étudie aussi le
@@ -37,7 +36,7 @@ TP2-Sarcasme-Arabe/
 │   └── G/
 ├── predictions/
 └── rapport/
-    └── Compte_rendu_TP2.pdf
+    └── TP2_VersionB_Sarcasme_SARA_SAKHI.pdf
 ```
 
 Les fonctions de chargement sont dans `data.py`, les nettoyages dans
@@ -128,9 +127,10 @@ Le prétraitement dépend de la famille de modèles :
   `ArabertPreprocessor`.
 - **MARBERTv2** : retrait des guillemets externes et harmonisation des espaces.
 
-Les PLM utilisent leur tokenizer associé, une longueur maximale de **64 tokens**
-et un padding dynamique par lot. Les emojis, rires et ponctuations sont conservés
-dans le nettoyage léger ; leur suppression conjointe est étudiée séparément en F4.
+Les modèles des parties D et E utilisent leur tokenizer associé, une longueur maximale 
+de 64 tokens et un padding dynamique par lot.
+Les emojis, rires et ponctuations sont conservés dans le nettoyage léger; 
+leur suppression conjointe est étudiée séparément en F4.
 
 ### A — Exploration et baseline
 
