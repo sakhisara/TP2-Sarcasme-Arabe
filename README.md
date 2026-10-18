@@ -321,50 +321,32 @@ Ces commandes lisent les prédictions sauvegardées sans entraîner de modèle.
 | Raccourcis et suppression de marqueurs | `results/F/F3_raccourcis.csv`, `F4_suppression_marqueurs.csv` |
 | Bootstrap et comparaison des graines | `results/F/F5_bootstrap_par_graine.csv`, `F5_moyenne_ecart_type.csv` |
 | McNemar | `results/F/F5_McNemar.csv` |
-| Erreurs E2 annotées et vérifiées | `results/F/F6_erreurs_E2_annotees_verifiees.csv` |
+| Erreurs E2 annotées et vérifiées | `results/F/F6_erreurs_E2_complete.csv` |
 | Détail des contradictions de l'audit étendu | `results/F/F6_doublons_contradictoires_train_test.csv` |
 | Comparaison finale et matrice de confusion | `results/G/G_comparaison_finale.csv`, `G_matrice_confusion.png` |
 | Prédictions finales | `predictions/` |
-| Compte rendu | `rapport/Compte_rendu_TP2.pdf` |
+| Compte rendu | `rapport/TP2_VersionB_Sarcasme_SARA_SAKHI.pdf` |
 
 Dans cette table, les noms abrégés d'une même ligne se trouvent dans le même
 dossier que le premier fichier indiqué. Les autres sorties détaillées et les
 historiques d'entraînement restent dans `results/`.
 
-## Ressources et checkpoints
+## Ressources utilisées
 
-Les modèles AraBERT, MARBERTv2 et les modèles de B sont chargés depuis leur
-identifiant Hugging Face. AraVec est téléchargé séparément par la cellule prévue
-dans le notebook :
+Les expériences utilisent AraBERT-twitter, MARBERTv2 et les modèles
+pré-entraînés de la partie B, chargés depuis Hugging Face dans le notebook.
 
-- modèle : `full_uni_cbow_100_twitter.mdl` ;
-- [archive AraVec Twitter 100D](https://bakrianoo.ewr1.vultrobjects.com/aravec/full_uni_cbow_100_twitter.zip) ;
-- [fonction de nettoyage officielle](https://github.com/bakrianoo/aravec/blob/master/utilities.py).
+Pour la partie C, nous avons utilisé les embeddings AraVec Twitter
+unigrammes de 100 dimensions et leur fonction de nettoyage `clean_str`.
 
-Les ressources lourdes et les checkpoints peuvent être conservés hors du dépôt.
-Leur présence est nécessaire pour reprendre directement l'inférence ; les CSV
-permettent de recalculer les scores sans ces fichiers. Le code d'inférence ne
-réentraîne pas les modèles. Si les poids pré-entraînés ne sont pas en cache,
-leur chargement nécessite une connexion Internet.
+Les checkpoints ont été sauvegardés et conservés dans une sauvegarde
+personnelle. Ils ne sont pas inclus dans le dépôt en raison de leur
+taille importante et parce qu’ils ne sont pas explicitement demandés
+dans la liste des livrables du TP.
 
-Exemple pour un checkpoint E2 disponible localement :
-
-```python
-from src.inference import PredicteurF
-
-spec = {
-    "type": "E",
-    "checkpoint": "checkpoints/E/E2_AraBERT_lambda0.3_seed42/best.pt",
-    "sans_raccourcis": False,
-}
-predicteur = PredicteurF(spec, device="cpu")
-scores = predicteur.scores(["نص التغريدة"])
-predictions = (scores >= predicteur.seuil).astype(int)
-predicteur.fermer()
-```
-
-Les fonctions d'entraînement de `src/train.py` écrivent par défaut dans
-`experiences_src/`, pour séparer leurs nouvelles sorties des résultats du notebook.
+Le notebook, les résultats dans `results/` et les prédictions dans
+`predictions/` permettent de consulter les expériences réalisées et
+de recalculer les scores à partir des prédictions sauvegardées.
 
 ## Limites et suites possibles
 
