@@ -1,0 +1,3 @@
+ensemble,nombre,frequence_pct,correlation
+train,6837,60.541928628353844,-0.1630253931373359
+test,6,0.2,-0.010743717144468376

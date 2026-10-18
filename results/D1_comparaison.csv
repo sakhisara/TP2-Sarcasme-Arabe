@@ -1,0 +1,3 @@
+modele,representation,pretraitement,graine,seuil,temps_entrainement_s,temps_extraction_commun_s,parametres_entraines,val_accuracy,val_precision_sarc,val_rappel_sarc,val_f1_sarc,val_macro_f1,val_pr_auc
+D1_AraBERT_gele_CLS_LR,CLS,guillemets externes retires + ArabertPreprocessor,42,0.6671023051519692,8.920599498000001,31.93378017100008,769,0.847808764940239,0.5485074626865671,0.6774193548387096,0.6061855670103092,0.7559322896779941,0.6077323107595893
+D1_AraBERT_gele_moyenne_LR,moyenne,guillemets externes retires + ArabertPreprocessor,42,0.6862584307951444,6.4067150860000766,31.93378017100008,769,0.8573705179282869,0.573076923076923,0.6866359447004609,0.6247379454926625,0.7683453623183922,0.6310732205292342

@@ -1,0 +1,2 @@
+modele,pretraitement,graine,seuil,temps_extraction_commun_s,temps_entrainement_s,parametres_entraines,meilleure_epoque,val_accuracy,val_precision_sarc,val_rappel_sarc,val_f1_sarc,val_macro_f1,val_pr_auc
+D2_AraBERT_gele_BiLSTM_attention,guillemets externes retires + ArabertPreprocessor,42,0.7260468006134033,33.34709607400009,23.53371877099994,435586,3,0.8852589641434263,0.6834170854271356,0.6267281105990783,0.6538461538461539,0.7925391227683491,0.6924800283554646

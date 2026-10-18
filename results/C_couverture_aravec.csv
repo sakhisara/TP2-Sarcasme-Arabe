@@ -1,0 +1,4 @@
+ensemble,total_tokens,tokens_avec_vecteur_aravec,couverture_pct
+train,242279,150870,62.27118322264827
+val,28214,16099,57.06032466151556
+test,63117,38045,60.27694598919467

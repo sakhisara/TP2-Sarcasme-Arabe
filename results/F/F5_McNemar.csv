@@ -1,0 +1,2 @@
+modele_A,modele_B,graine,nombre_tweets,E1_correct_E2_incorrect,E1_incorrect_E2_correct,p_value,significatif_5pct
+E1,E2,42,3000,35,32,0.8071946913670247,False
